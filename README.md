@@ -7,6 +7,7 @@ Integrantes:
 <li>BRUNO ROVANI MARCELINO
 <li>ERICK ANDREAS PONTICELLI
 <li>RENAN GABRIEL PIECHONTCOSKI
+  <hr></hr>
 <li>Descrição do Projeto:
 <li>Este projeto configura um ambiente Docker com:
 </hr>
@@ -17,3 +18,4 @@ Integrantes:
 <li>phpMyAdmin
 <li>Acesse: WordPress: http://localhost/prova
 <li>phpMyAdmin: http://localhost:8080
+<hr></hr>
