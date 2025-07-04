@@ -16,6 +16,6 @@ Integrantes:
 <li>WordPress
 <li>MySQL 5.7
 <li>phpMyAdmin
-<li>Acesse: WordPress: http://localhost/prova
-<li>phpMyAdmin: http://localhost:8080
+<li>Acesse: WordPress: <a href="http://localhost/prova">Ir para Prova Local</a>
+<li>phpMyAdmin: <a href="http://localhost:8080"></a>
 <hr></hr>
