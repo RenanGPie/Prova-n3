@@ -1,5 +1,5 @@
 <h3>Trabalho de Redes - Docker Compose</h3>
-</hr>
+<hr></hr>
 <br>
 Integrantes:
 <br>
@@ -11,9 +11,9 @@ Integrantes:
 <li>Este projeto configura um ambiente Docker com:
 </hr>
   <br>
-NGINX como proxy reverso
-WordPress
-MySQL 5.7
-phpMyAdmin
-Acesse: WordPress: http://localhost/prova
-phpMyAdmin: http://localhost:8080
+<li>NGINX como proxy reverso
+<li>WordPress
+<li>MySQL 5.7
+<li>phpMyAdmin
+<li>Acesse: WordPress: http://localhost/prova
+<li>phpMyAdmin: http://localhost:8080
