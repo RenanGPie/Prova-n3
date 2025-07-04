@@ -1,6 +1,5 @@
 <h3>Trabalho de Redes - Docker Compose</h3>
 <hr></hr>
-<br>
 Integrantes:
 <br>
 <li>BRUNO SCHIMIGUEL
