@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx_reverse_proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./wordpress_data:/var/www/html # <--- ADICIONE ESTA LINHA AQUI
+    depends_on:
+      - wordpress
+    restart: always
+
+  mysql:
+    image: mysql:5.7
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: user
+      MYSQL_PASSWORD: userpass
+      MYSQL_ROOT_PASSWORD: rootpass
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  wordpress:
+    image: wordpress:fpm
+    container_name: wordpress_app
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mysql:3306
+      WORDPRESS_DB_USER: user
+      WORDPRESS_DB_PASSWORD: userpass
+      WORDPRESS_DB_NAME: wordpress
+    volumes: # <--- ADICIONE ESTE BLOCO DE VOLUMES AQUI SE AINDA NÃO TIVER
+      - ./wordpress_data:/var/www/html # <--- E ESTA LINHA AQUI
+    expose:
+      - "80" # expõe para outros containers, mas não para o host
+    depends_on:
+      - mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_tool
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: rootpass
+    ports:
+      - "8080:80"
+
+volumes:
+  mysql_data: {}
+  # wordpress_data: {} # Não precisa ser um volume nomeado aqui se você usar um bind mount
